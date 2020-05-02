@@ -1,0 +1,243 @@
+<div class="row d-flex">
+  <div class="col">
+    <h1>Blog</h1>
+  </div>
+</div>
+
+<div class="form form-horizontal" [formGroup]="form">
+  <div class="form-group">
+    <label class="control-label">Name 1</label>
+    <input type="text" class="form-control" formControlName="name1" />
+  </div>
+  <pre>{{ form.controls.name1.value | json }}</pre>
+  <pre>{{ form.controls.name1.errors | json }}</pre>
+
+  <div class="form-group">
+    <label class="control-label">Name 2 (not required)</label>
+    <input type="text" class="form-control" formControlName="name2" />
+  </div>
+  <pre>{{ form.controls.name2.value | json }}</pre>
+  <pre>{{ form.controls.name2.errors | json }}</pre>
+
+  <div class="form-group">
+    <label class="control-label">Active</label>
+    <input type="checkbox" class="form-control" formControlName="active1" />
+
+    <!-- <div>
+      <input
+        id="active"
+        type="radio"
+        class="custom-control-input"
+        value="true"
+        name="active"
+        formControlName="active"
+        required
+      />
+      <label class="custom-control-label" for="active">Active</label>
+    </div>
+
+    <div>
+      <input
+        id="inactive"
+        type="radio"
+        class="custom-control-input"
+        value="false"
+        name="active"
+        formControlName="active"
+        required
+      />
+      <label class="custom-control-label" for="inactive">Inactive</label>
+    </div>
+
+    <div>
+      <input
+        id="myNull"
+        type="radio"
+        class="custom-control-input"
+        value=""
+        name="active"
+        formControlName="active"
+        required
+      />
+      <label class="custom-control-label" for="myNull">null</label>
+    </div>
+    <pre>{{ form.controls.active.value | json }}</pre>
+    <pre>{{ form.controls.active.errors | json }}</pre> -->
+  </div>
+
+  <pre>{{ form.controls.active1.value | json }}</pre>
+  <pre>{{ form.controls.active1.errors | json }}</pre>
+
+  <div class="form-group">
+    <label class="control-label">Active 2 (not required)</label>
+    <input type="checkbox" class="form-control" formControlName="active2" />
+  </div>
+  <pre>{{ form.controls.active2.value | json }}</pre>
+  <pre>{{ form.controls.active2.errors | json }}</pre>
+
+  <div class="form-group">
+    <label class="control-label">Brightness 1</label>
+
+    <div>
+      <input
+        id="field1"
+        type="radio"
+        class="custom-control-input"
+        value="white"
+        formControlName="brightness1"
+      />
+      <label class="custom-control-label" for="field1">Bright</label>
+    </div>
+
+    <div>
+      <input
+        id="field2"
+        type="radio"
+        class="custom-control-input"
+        value="black"
+        formControlName="brightness1"
+      />
+      <!-- required -->
+      <label class="custom-control-label" for="field2">Dark</label>
+    </div>
+
+    <div>
+      <input
+        id="field3"
+        type="radio"
+        class="custom-control-input"
+        value=""
+        formControlName="brightness1"
+      />
+      <label class="custom-control-label" for="field3">choose...</label>
+    </div>
+  </div>
+
+  <pre>{{ form.controls.brightness1.value | json }}</pre>
+  <pre>{{ form.controls.brightness1.errors | json }}</pre>
+
+  <div class="form-group">
+    <label class="control-label">Brightness 2 (not required)</label>
+
+    <div>
+      <input
+        id="field10"
+        type="radio"
+        class="custom-control-input"
+        value="white"
+        formControlName="brightness2"
+      />
+      <label class="custom-control-label" for="field10">Bright</label>
+    </div>
+
+    <div>
+      <input
+        id="field20"
+        type="radio"
+        class="custom-control-input"
+        value="black"
+        formControlName="brightness2"
+      />
+      <label class="custom-control-label" for="field20">Dark</label>
+    </div>
+
+    <div>
+      <input
+        id="field30"
+        type="radio"
+        class="custom-control-input"
+        value=""
+        formControlName="brightness2"
+      />
+      <label class="custom-control-label" for="field30">choose...</label>
+    </div>
+  </div>
+
+  <pre>{{ form.controls.brightness2.value | json }}</pre>
+  <pre>{{ form.controls.brightness2.errors | json }}</pre>
+
+  <div class="form-group">
+    <label class="control-label">Blog Type 1</label>
+    <select class="form-control form-control-sm" formControlName="blogType1">
+      <option type="number" [ngValue]="">Select a Blog Type....</option>
+      <option *ngFor="let city of allBlogTypes" [ngValue]="city">{{
+        city
+      }}</option>
+    </select>
+  </div>
+
+  <pre>{{ form.controls.blogType1.value | json }}</pre>
+  <pre>{{ form.controls.blogType1.errors | json }}</pre>
+
+  <div class="form-group">
+    <label class="control-label">Blog Type</label>
+    <select class="form-control form-control-sm" formControlName="blogType2">
+      <option type="number" [ngValue]="">Select a Blog Type....</option>
+      <option *ngFor="let city of allBlogTypes" [ngValue]="city">{{
+        city
+      }}</option>
+    </select>
+  </div>
+
+  <pre>{{ form.controls.blogType2.value | json }}</pre>
+  <pre>{{ form.controls.blogType2.errors | json }}</pre>
+
+  <div class="form-group">
+    <label class="control-label">Date 1</label>
+    <input type="date" class="form-control" formControlName="date1" />
+  </div>
+  <pre>{{ form.controls.date1.value | json }}</pre>
+  <pre>{{ form.controls.date1.errors | json }}</pre>
+
+  <div class="form-group">
+    <label class="control-label">Date 2 (not required)</label>
+    <input type="date" class="form-control" formControlName="date2" />
+  </div>
+  <pre>{{ form.controls.date2.value | json }}</pre>
+  <pre>{{ form.controls.date2.errors | json }}</pre>
+
+  <div class="form-group">
+    <label class="control-label">Description 1</label>
+    <textarea
+      type="text"
+      class="form-control"
+      formControlName="description1"
+    ></textarea>
+  </div>
+  <pre>{{ form.controls.description1.value | json }}</pre>
+  <pre>{{ form.controls.description1.errors | json }}</pre>
+
+  <div class="form-group">
+    <label class="control-label">Description 2 (not required)</label>
+    <textarea
+      type="text"
+      class="form-control"
+      formControlName="description2"
+    ></textarea>
+  </div>
+  <pre>{{ form.controls.description2.value | json }}</pre>
+  <pre>{{ form.controls.description2.errors | json }}</pre>
+
+  <div class="form-group">
+    <label class="control-label">Costs 1</label>
+    <input type="number" class="form-control" formControlName="costs1" />
+  </div>
+  <pre>{{ form.controls.costs1.value | json }}</pre>
+  <pre>{{ form.controls.costs1.errors | json }}</pre>
+
+  <div class="form-group">
+    <label class="control-label">Costs 2 (not required)</label>
+    <input type="number" class="form-control" formControlName="costs2" />
+  </div>
+  <pre>{{ form.controls.costs2.value | json }}</pre>
+  <pre>{{ form.controls.costs2.errors | json }}</pre>
+
+  <div class="btn-group float-right">
+    <button class="btn btn-primary" [disabled]="!form.valid">
+      Save
+    </button>
+  </div>
+
+  <pre>form.errors: {{ form.errors | json }}</pre>
+  <pre>form.invalid: {{ form.invalid | json }}</pre>
+</div>
