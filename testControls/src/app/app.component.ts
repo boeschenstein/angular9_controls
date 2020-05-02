@@ -12,6 +12,14 @@ export class AppComponent implements OnInit {
 
   allBlogTypes = [null, 1, 2];
 
+  allCities: any = [
+    'Florida',
+    'South Dakota',
+    'Tennessee',
+    'Michigan',
+    'New York',
+  ];
+
   constructor(protected readonly fb: FormBuilder) {
     this.form = this.fb.group({
       name1: [
@@ -37,8 +45,11 @@ export class AppComponent implements OnInit {
       costs2: [null],
       blogType1: [null, [Validators.required]],
       blogType2: [null],
+      cities1: [null, [Validators.required]],
+      cities2: [null],
     });
   }
+
   ngOnInit(): void {
     this.form.patchValue({
       name1: null,
@@ -53,6 +64,28 @@ export class AppComponent implements OnInit {
       costs2: null,
       blogType1: null,
       blogType2: null,
+      cities1: null,
+      cities2: null,
     });
+  }
+
+  saveMe() {
+    console.warn(this.form.value);
+  }
+
+  showErrors() {
+    for (const control in this.form.controls) {
+      if (this.form.controls.hasOwnProperty(control)) {
+        const element = this.form.controls[control];
+        if (!!element?.errors) {
+          for (const error in element.errors) {
+            if (element.errors.hasOwnProperty(error)) {
+              const err = element.errors[error];
+              console.warn(control, error, err);
+            }
+          }
+        }
+      }
+    }
   }
 }

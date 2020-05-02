@@ -140,6 +140,30 @@
   <pre>{{ form.controls.blogType2.errors | json }}</pre>
 
   <div class="form-group">
+    <label class="control-label">Multiple Cities</label>
+    <select multiple formControlName="cities1">
+      <option *ngFor="let city of allCities" [ngValue]="city"
+        >{{ city }}
+      </option>
+    </select>
+  </div>
+
+  <pre>{{ form.controls.cities1.value | json }}</pre>
+  <pre>{{ form.controls.cities1.errors | json }}</pre>
+
+  <div class="form-group">
+    <label class="control-label">Multiple Cities 2 (not required)</label>
+    <select multiple formControlName="cities2">
+      <option *ngFor="let city of allCities" [ngValue]="city"
+        >{{ city }}
+      </option>
+    </select>
+  </div>
+
+  <pre>{{ form.controls.cities2.value | json }}</pre>
+  <pre>{{ form.controls.cities2.errors | json }}</pre>
+
+  <div class="form-group">
     <label class="control-label">Date 1</label>
     <input type="date" class="form-control" formControlName="date1" />
   </div>
@@ -190,8 +214,18 @@
   <pre>{{ form.controls.costs2.errors | json }}</pre>
 
   <div class="btn-group float-right">
-    <button class="btn btn-primary" [disabled]="!form.valid">
+    <button class="btn btn-primary" [disabled]="!form.valid" (click)="saveMe()">
       Save
+    </button>
+  </div>
+
+  <div class="btn-group float-right">
+    <button
+      class="btn btn-primary"
+      [disabled]="form.valid"
+      (click)="showErrors()"
+    >
+      Show Errors
     </button>
   </div>
 
