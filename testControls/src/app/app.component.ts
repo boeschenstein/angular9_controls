@@ -12,13 +12,7 @@ export class AppComponent implements OnInit {
 
   allBlogTypes = [null, 1, 2];
 
-  allCities: any = [
-    'Florida',
-    'South Dakota',
-    'Tennessee',
-    'Michigan',
-    'New York',
-  ];
+  allCities: any = ['Bern', 'Zürich', 'Luzern', 'Frauenfeld', 'Basel'];
 
   constructor(protected readonly fb: FormBuilder) {
     this.form = this.fb.group({
@@ -51,6 +45,10 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.setEmptyValues();
+  }
+
+  setEmptyValues(): void {
     this.form.patchValue({
       name1: null,
       name2: null,
@@ -58,6 +56,8 @@ export class AppComponent implements OnInit {
       description2: null,
       active1: null,
       active2: null,
+      brightness1: null,
+      brightness2: null,
       date1: null,
       date2: null,
       costs1: null,
@@ -66,6 +66,27 @@ export class AppComponent implements OnInit {
       blogType2: null,
       cities1: null,
       cities2: null,
+    });
+  }
+
+  setValues() {
+    this.form.patchValue({
+      name1: 'name 1',
+      name2: 'name 2',
+      description1: 'desc 1',
+      description2: 'desc 2',
+      active1: true,
+      active2: false,
+      brightness1: 'black',
+      brightness2: '',
+      date1: new Date().toISOString().split('T')[0], // remove time portion
+      date2: '2019-05-30',
+      costs1: 123.456,
+      costs2: -1234.5678,
+      blogType1: 1,
+      blogType2: 2,
+      cities1: ['Bern', 'Zürich'],
+      cities2: ['Basel'],
     });
   }
 
