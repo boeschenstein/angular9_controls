@@ -116,7 +116,7 @@
   <div class="form-group">
     <label class="control-label">Blog Type 1</label>
     <select class="form-control form-control-sm" formControlName="blogType1">
-      <option type="number" [ngValue]=""></option>
+      <option type="number" [ngValue]="null">Choose a Blog Type...</option>
       <option *ngFor="let blogType of allBlogTypes" [ngValue]="blogType">{{
         blogType
       }}</option>
@@ -129,7 +129,7 @@
   <div class="form-group">
     <label class="control-label">Blog Type</label>
     <select class="form-control form-control-sm" formControlName="blogType2">
-      <option type="number" [ngValue]=""></option>
+      <option type="number" [ngValue]="null">Choose a Blog Type...</option>
       <option *ngFor="let blogType of allBlogTypes" [ngValue]="blogType">{{
         blogType
       }}</option>
