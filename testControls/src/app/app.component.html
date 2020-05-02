@@ -241,6 +241,12 @@
     </button>
   </div>
 
+  <div class="btn-group float-right">
+    <button class="btn btn-primary" (click)="setMandatoryValues()">
+      Set Mandatory Values
+    </button>
+  </div>
+
   <pre>form.errors: {{ form.errors | json }}</pre>
   <pre>form.invalid: {{ form.invalid | json }}</pre>
 </div>

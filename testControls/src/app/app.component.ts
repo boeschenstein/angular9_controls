@@ -89,6 +89,28 @@ export class AppComponent implements OnInit {
       cities2: ['Basel'],
     });
   }
+  setMandatoryValues() {
+    this.form.patchValue({
+      name1: 'name 1',
+      name2: null,
+      description1: 'desc 1',
+      description2: null,
+      active1: true,
+      active2: null,
+      brightness1: 'black',
+      brightness2: null,
+      date1: new Date().toISOString().split('T')[0], // remove time portion
+      date2: null,
+      costs1: 123.456,
+      costs2: null,
+      blogType1: 1,
+      blogType2: null,
+      category1: '3',
+      category2: null,
+      cities1: ['Bern', 'Zürich'],
+      cities2: null,
+    });
+  }
 
   saveMe() {
     console.warn(this.form.value);
