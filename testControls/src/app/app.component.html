@@ -140,6 +140,32 @@
   <pre>{{ form.controls.blogType2.errors | json }}</pre>
 
   <div class="form-group">
+    <label class="control-label">Category 1</label>
+    <select class="form-control form-control-sm" formControlName="category1">
+      <option type="number" [ngValue]="null">Choose a Category...</option>
+      <option *ngFor="let category of allCategories" [ngValue]="category.key">{{
+        category.value
+      }}</option>
+    </select>
+  </div>
+
+  <pre>{{ form.controls.category1.value | json }}</pre>
+  <pre>{{ form.controls.category1.errors | json }}</pre>
+
+  <div class="form-group">
+    <label class="control-label">Category 2 (not required)</label>
+    <select class="form-control form-control-sm" formControlName="category2">
+      <option type="number" [ngValue]="null">Choose a Category...</option>
+      <option *ngFor="let category of allCategories" [ngValue]="category.key">{{
+        category.value
+      }}</option>
+    </select>
+  </div>
+
+  <pre>{{ form.controls.category2.value | json }}</pre>
+  <pre>{{ form.controls.category2.errors | json }}</pre>
+
+  <div class="form-group">
     <label class="control-label">Multiple Cities</label>
     <select multiple formControlName="cities1">
       <option *ngFor="let city of allCities" [ngValue]="city"

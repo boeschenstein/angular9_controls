@@ -12,6 +12,12 @@ export class AppComponent implements OnInit {
 
   allBlogTypes = [null, 1, 2];
 
+  allCategories = [
+    { key: '1', value: 'Cat 1' },
+    { key: '2', value: 'Cat 2' },
+    { key: '3', value: 'Cat 3' },
+  ];
+
   allCities: any = ['Bern', 'Zürich', 'Luzern', 'Frauenfeld', 'Basel'];
 
   constructor(protected readonly fb: FormBuilder) {
@@ -39,6 +45,8 @@ export class AppComponent implements OnInit {
       costs2: [null],
       blogType1: [null, [Validators.required]],
       blogType2: [null],
+      category1: [null, [Validators.required]],
+      category2: [null],
       cities1: [null, [Validators.required]],
       cities2: [null],
     });
@@ -64,6 +72,8 @@ export class AppComponent implements OnInit {
       costs2: null,
       blogType1: null,
       blogType2: null,
+      category1: null,
+      category2: null,
       cities1: null,
       cities2: null,
     });
@@ -85,6 +95,8 @@ export class AppComponent implements OnInit {
       costs2: -1234.5678,
       blogType1: 1,
       blogType2: 2,
+      category1: '3',
+      category2: '2',
       cities1: ['Bern', 'Zürich'],
       cities2: ['Basel'],
     });
