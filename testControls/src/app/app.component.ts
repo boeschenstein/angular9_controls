@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -35,7 +35,7 @@ export class AppComponent implements OnInit {
       date2: [null],
       costs1: [null, { validators: [Validators.required] }],
       costs2: [null],
-      blogType1: [null, { Validators: [Validators.required] }],
+      blogType1: [null, [Validators.required]],
       blogType2: [null],
     });
   }

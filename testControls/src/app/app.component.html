@@ -22,49 +22,7 @@
   <div class="form-group">
     <label class="control-label">Active</label>
     <input type="checkbox" class="form-control" formControlName="active1" />
-
-    <!-- <div>
-      <input
-        id="active"
-        type="radio"
-        class="custom-control-input"
-        value="true"
-        name="active"
-        formControlName="active"
-        required
-      />
-      <label class="custom-control-label" for="active">Active</label>
-    </div>
-
-    <div>
-      <input
-        id="inactive"
-        type="radio"
-        class="custom-control-input"
-        value="false"
-        name="active"
-        formControlName="active"
-        required
-      />
-      <label class="custom-control-label" for="inactive">Inactive</label>
-    </div>
-
-    <div>
-      <input
-        id="myNull"
-        type="radio"
-        class="custom-control-input"
-        value=""
-        name="active"
-        formControlName="active"
-        required
-      />
-      <label class="custom-control-label" for="myNull">null</label>
-    </div>
-    <pre>{{ form.controls.active.value | json }}</pre>
-    <pre>{{ form.controls.active.errors | json }}</pre> -->
   </div>
-
   <pre>{{ form.controls.active1.value | json }}</pre>
   <pre>{{ form.controls.active1.errors | json }}</pre>
 
@@ -97,7 +55,6 @@
         value="black"
         formControlName="brightness1"
       />
-      <!-- required -->
       <label class="custom-control-label" for="field2">Dark</label>
     </div>
 
@@ -159,9 +116,9 @@
   <div class="form-group">
     <label class="control-label">Blog Type 1</label>
     <select class="form-control form-control-sm" formControlName="blogType1">
-      <option type="number" [ngValue]="">Select a Blog Type....</option>
-      <option *ngFor="let city of allBlogTypes" [ngValue]="city">{{
-        city
+      <option type="number" [ngValue]=""></option>
+      <option *ngFor="let blogType of allBlogTypes" [ngValue]="blogType">{{
+        blogType
       }}</option>
     </select>
   </div>
@@ -172,9 +129,9 @@
   <div class="form-group">
     <label class="control-label">Blog Type</label>
     <select class="form-control form-control-sm" formControlName="blogType2">
-      <option type="number" [ngValue]="">Select a Blog Type....</option>
-      <option *ngFor="let city of allBlogTypes" [ngValue]="city">{{
-        city
+      <option type="number" [ngValue]=""></option>
+      <option *ngFor="let blogType of allBlogTypes" [ngValue]="blogType">{{
+        blogType
       }}</option>
     </select>
   </div>
