@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title = 'testControls';
+  title = 'testControls Angular 9';
   form: FormGroup;
 
   allBlogTypes = [null, 1, 2];
